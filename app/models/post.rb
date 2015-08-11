@@ -3,5 +3,5 @@ class Post < ActiveRecord::Base
   has_many :post_categories
   belongs_to :user
 
-  validates :title, presence: true
+  # validates :title, presence: true
 end

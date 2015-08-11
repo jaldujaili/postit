@@ -20,4 +20,4 @@
     =f.text_area :description, row: 5
 
 
-  =f.submit "create post", class: 'btn btn-primary'
+  =f.submit @post.new_record? ? "create post" : "edit post", class: 'btn btn-primary'
