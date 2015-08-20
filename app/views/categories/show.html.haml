@@ -1,0 +1,13 @@
+=render 'shared/content_title', title: "The Category: #{@category.name}"
+
+- @category.posts.each do |post|
+  .row
+    .span8 well
+      =render post.categories
+      %h4
+        =link_to post.title, post.url
+      %p
+        =post.description
+      %small
+        %span
+        =link_to("#{post.comments.size} comments", post_path(post))

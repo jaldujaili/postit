@@ -1,0 +1,14 @@
+= render "shared/content_title", title: "New Category"
+- if @category.errors.any?
+  .alert.alert-error
+    %h5 There were some errors:
+    %ul
+      - @category.errors.full_messages.each do |msg|
+        %li
+          = msg
+.well
+  =form_for @category do |f|
+    .control-group
+      =f.label :name
+      =f.text_field :name
+    =f.submit "Create Category", class: 'btn btn-sucess'
